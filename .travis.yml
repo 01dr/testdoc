@@ -3,13 +3,14 @@ node_js:
 - 4
 env:
   global:
-  - GIT_NAME: Travis CI
+  - GIT_NAME: Amazing-Space-Invader
   - GIT_EMAIL: amazing.space.invader@gmail.com
   - GITHUB_REPO: Amazing-Space-Invader/testdoc
   - GIT_SOURCE: _docpress
-  - secure: h++S6UqAxj+NWjZqHMIQtFDwpoDxFcENUJ9G/DzneV1mMN9R8I0jofy17jFwU/KFMCWFtC5XrKPdHqO0n+9z77Nfuys2hVGodt8LCpW6BZ1Q4CjgnRdYmEIKm0SYnzrJqhw9OGVRRp07r0yuRxm7LHzL3I4ubd9GlLFpGSXhYkGdmcc9fMhzETLJtQrG9rUspfE4f8EK29/js4aLoXIW6ZTaw/FNtn7mSb/qpnk10NDfp7Oe1fbdYxxW4mbZa9iJlVkaZ7nYelCFhs5uW1AUKbzIdA1SDEB4YPI2ZpQdCTJBz0ib5oQImugPIKveXR3llKAIXIr6QArd5/Tjmo0DK2eksQeUNrQn8qC/edScDgVkNSA8H3FQwL+9P/9XR4mMcY5y6xpQjCfF0q51HJFj/UiWmx4HqLAllCq5qNQmFnSTp+3mUEBr5A93lXyQ1MdFfcv/uyG3h4ExSWJzB0gGUGV4oyuOBp7IVX/S/bMtd3Z9JYvGymOZ2zdWKTm6aRS/9e2ZImF1mHCrMc6C6rpZSq/mKIs+GD0apGB9LCEhW+8kD0WR01HvQtDmwrEanelfwV4WQvCJyFsEP8B2ky79KEpWDiiokvEaPMy5dO7JKMr/BeAC/QLUoMicdmtgCXaPz2oM3BCrWNiSANUoOtHPzCcwcliy60KWZ4WF5FOjlik=
+  - secure: iwu53lTuAoOPd6CovMbQ61QASpGSd2F6XO7KsE2ORi8m8vq8mm7EyzYG8yoXGmN4UdqcqP/llRPPD/ihp+cTW58Jso4rJL6gz+Ie74nB41awWZZvjJFuu01Rjj6XvkwyTGMBM88yfUZIdDFPrliXvq3Eu1sCFz9nbLJ1aQoxXLYWSh/5ZqDyRSWsuzIbqBwdmfz/q0Yi1J5Ed2EVNG014/VnOdVAh52C9swGL8J3/7x1HYWp3Hohg61w9eK1DFBHSzVc60Ne5XoAZKgvx5N4/zqQC4u0GZp06N0KolBGZotCtNZFtzwpbZLdObxIo9ZiarTT4tVlf58HFljJmTFaKi0ii05d05w1iTKDjAdGGt4y8G45YuxB69c5tkKTLCEpNFn+ri0bFKpvHds4K7RmEKlVHoExTg6gn1jjh59PxYaXnfjMHqFGk7FsoEau2dNy5GIstKQ0zGR69CdcJc8jbsXT+A78Ui24JRMZWEOqS8EcNPKAwINYAPbVEv0HZfjJpq3nvPwA2Hs2uBqtDXo6WeSf8dq8vsS59r+d9xFFkP/oYWfXQaxsQI1Bd+gJacu01EE8rvC8Kup+lw7oxoLuGYYzPjvJxPHh8ZZ6iiZctwWeVEu/9zoWwuyqgsJ8umNHiM1L6qoEAUXEaQN5xwogEe5jr8OeQ5nIfpE62KtDINk=
 script:
 - yarn add docpress git-update-ghpages
 - yarn build
 after_success:
-- if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then ./node_modules/.bin/git-update-ghpages -e; fi
+- if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then ./node_modules/.bin/git-update-ghpages
+  -e; fi
