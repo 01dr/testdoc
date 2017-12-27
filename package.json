@@ -6,9 +6,12 @@
   "author": "Aidar Ibatullin <amazing.space.invader@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "./node_modules/docpress/bin/docpress s"
+    "start": "./node_modules/docpress/bin/docpress s",
+    "build": "./node_modules/docpress/bin/docpress build",
+    "deploy": "./node_modules/.bin/git-update-ghpages -e"
   },
   "dependencies": {
-    "docpress": "^0.7.1"
+    "docpress": "^0.7.1",
+    "git-update-ghpages": "^1.3.0"
   }
 }

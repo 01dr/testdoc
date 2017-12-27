@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- 4
+env:
+  global:
+  - GIT_NAME: Travis CI
+  - GIT_EMAIL: amazing.space.invader@gmail.com
+  - GITHUB_REPO: Amazing-Space-Invader/testdoc
+  - GIT_SOURCE: _docpress
+  - secure: h++S6UqAxj+NWjZqHMIQtFDwpoDxFcENUJ9G/DzneV1mMN9R8I0jofy17jFwU/KFMCWFtC5XrKPdHqO0n+9z77Nfuys2hVGodt8LCpW6BZ1Q4CjgnRdYmEIKm0SYnzrJqhw9OGVRRp07r0yuRxm7LHzL3I4ubd9GlLFpGSXhYkGdmcc9fMhzETLJtQrG9rUspfE4f8EK29/js4aLoXIW6ZTaw/FNtn7mSb/qpnk10NDfp7Oe1fbdYxxW4mbZa9iJlVkaZ7nYelCFhs5uW1AUKbzIdA1SDEB4YPI2ZpQdCTJBz0ib5oQImugPIKveXR3llKAIXIr6QArd5/Tjmo0DK2eksQeUNrQn8qC/edScDgVkNSA8H3FQwL+9P/9XR4mMcY5y6xpQjCfF0q51HJFj/UiWmx4HqLAllCq5qNQmFnSTp+3mUEBr5A93lXyQ1MdFfcv/uyG3h4ExSWJzB0gGUGV4oyuOBp7IVX/S/bMtd3Z9JYvGymOZ2zdWKTm6aRS/9e2ZImF1mHCrMc6C6rpZSq/mKIs+GD0apGB9LCEhW+8kD0WR01HvQtDmwrEanelfwV4WQvCJyFsEP8B2ky79KEpWDiiokvEaPMy5dO7JKMr/BeAC/QLUoMicdmtgCXaPz2oM3BCrWNiSANUoOtHPzCcwcliy60KWZ4WF5FOjlik=
+script:
+- yarn add docpress git-update-ghpages
+- yarn build
+after_success:
+- if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then yarn
+  deploy; fi
